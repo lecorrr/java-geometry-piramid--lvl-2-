@@ -1,0 +1,44 @@
+package javatrianglepic;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("input height of piramid");
+		int n = 5;
+		int h = 1;
+		int i = 1;
+		int j = 0;
+		String line1 = "";
+		String line2 = "";
+		while (h <= n) {
+			if (i <= h) {
+				line1 += "*";
+				i++;
+				if ((j <= n - h) && (h != n)) {
+					line2 += "*";
+					j++;
+				} else {
+					j = 0;
+					line2 += "\n";
+				}
+			} else {
+				h++;
+				line1 += "\n";
+				i = 1;
+				if ((j <= n - h) && (h != n)) {
+					line2 += "*";
+					j++;
+				} else {
+					j = 0;
+					line2 += "\n";
+				}
+			}
+		}
+		System.out.print(line1);
+		System.out.print(line2);
+	}
+
+}
